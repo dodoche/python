@@ -15,8 +15,7 @@ def main():
   cmap.data["special.creationTimestamp"]= "2016-02-18T18:52:05Z"
   cmap.data["special.namespace"] = "default"
   api_instance.create_namespaced_config_map(namespace="tete", body=cmap)
-  # print(cmap.data)
+  print(cmap.data)
   
 
-if __name__ == '__main__':
-    main()
+
