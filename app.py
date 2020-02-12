@@ -2,7 +2,7 @@ from kubernetes import client
 from kubernetes import config
 from kubernetes.client.rest import ApiException
 
-def main():
+if __name__ == '__main__':
 
   config.load_kube_config()
 
@@ -15,7 +15,7 @@ def main():
   cmap.data["special.creationTimestamp"]= "2016-02-18T18:52:05Z"
   cmap.data["special.namespace"] = "default"
   api_instance.create_namespaced_config_map(namespace="tete", body=cmap)
-  return cmap.data
+  print(cmap.data)
   
   
 
