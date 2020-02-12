@@ -2,7 +2,7 @@ from kubernetes import client
 from kubernetes import config
 from kubernetes.client.rest import ApiException
 
-if __name__ == "__main__":
+def main():
 
   config.load_kube_config()
 
@@ -16,8 +16,8 @@ if __name__ == "__main__":
   cmap.data["special.namespace"] = "default"
   api_instance.create_namespaced_config_map(namespace="tete", body=cmap)
   print(cmap.data)
-else:
-  print("one.py is being imported into another module")
+   
+main()
   
   
 
