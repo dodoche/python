@@ -1,3 +1,2 @@
-import openshift as oc
-
+print("ich lese es")
 
