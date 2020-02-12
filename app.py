@@ -1,4 +1,5 @@
-from kubernetes import client, config
+from kubernetes import client
+from kubernetes import config
 from kubernetes.client.rest import ApiException
 
 def main():
