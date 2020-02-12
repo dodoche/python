@@ -1,5 +1,3 @@
-'''
-
 import openshift as oc
 
 print('OpenShift client version: {}'.format(oc.get_client_version()))
