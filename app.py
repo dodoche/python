@@ -16,7 +16,7 @@ def main():
   cmap.data["special.namespace"] = "default"
   api_instance.create_namespaced_config_map(namespace="tete", body=cmap)
   # print(cmap.data)
-  )
+  
 
 if __name__ == '__main__':
     main()
