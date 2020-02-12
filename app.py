@@ -4,8 +4,6 @@ from kubernetes.client.rest import ApiException
 
 def main():
 
-  config.load_kube_config()
-
   api_instance = client.CoreV1Api()
   cmap = client.V1ConfigMap()
   cmap.metadata = client.V1ObjectMeta(name="special-config1")
