@@ -12,11 +12,12 @@ def main():
   cmap.data["special.type"] = "charm"
   cmap.data["special.creationTimestamp"]= "2016-02-18T18:52:05Z"
   cmap.data["special.namespace"] = "default"
-  api_instance.create_namespaced_config_map(namespace="tete", body=cmap)
+  api_instance.create_namespaced_config_map(namespace="default", body=cmap)
   print(cmap.data)
    
-main()
-  
+  if __name__ == "__main__":
+    # Only for debugging while developing
+    app.run(host='0.0.0.0', debug=True, port=80)
   
 
 
