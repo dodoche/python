@@ -1,23 +1,27 @@
-from kubernetes import client
-from kubernetes import config
+from __future__ import print_function
+import time
+import kubernetes.client
 from kubernetes.client.rest import ApiException
+from pprint import pprint
 
-def main():
+# Configure API key authorization: BearerToken
+configuration = kubernetes.client.Configuration()
+#configuration.api_key['authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['authorization'] = 'Bearer'
 
-  api_instance = client.CoreV1Api()
-  cmap = client.V1ConfigMap()
-  cmap.metadata = client.V1ObjectMeta(name="special-config1")
-  cmap.data = {}
-  cmap.data["special.how"] = "very"
-  cmap.data["special.type"] = "charm"
-  cmap.data["special.creationTimestamp"]= "2016-02-18T18:52:05Z"
-  cmap.data["special.namespace"] = "default"
-  api_instance.create_namespaced_config_map(namespace="default", body=cmap)
-  print(cmap.data)
-   
-  if __name__ == "__main__":
-    # Only for debugging while developing
-    app.run(host='0.0.0.0', debug=True, port=80)
-  
+# create an instance of the API class
+api_instance = kubernetes.client.CoreV1Api(kubernetes.client.ApiClient(configuration))
+name = "elastic-licensing" # str | name of the ConfigMap
+namespace = 'default' # str | object name and auth scope, such as for teams and projects
+pretty = 'pretty_example' # str | If 'true', then the output is pretty printed. (optional)
+exact = True # bool | Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'. Deprecated. Planned for removal in 1.18. (optional)
+export = True # bool | Should this value be exported.  Export strips fields that a user can not specify. Deprecated. Planned for removal in 1.18. (optional)
+
+try:
+    api_response = api_instance.read_namespaced_config_map(name, namespace, pretty=pretty, exact=exact, export=export)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CoreV1Api->read_namespaced_config_map: %s\n" % e)
 
 
