@@ -1,6 +1,9 @@
-FROM nbgallery/jupyter-alpine:latest 
+from setuptools import setup, find_packages
 
-RUN pip install git+https://github.com/kubernetes-client/python.git
-
-ENTRYPOINT ["/sbin/tini", "--"]
-CMD ["jupyter", "notebook", "--ip=0.0.0.0"]
+setup(
+    name='sukem',
+    version='0.0.1',
+    author='doraly',
+    url="https://github.com/dodoche/openshift-python.git",
+    packages=find_packages('selector.py'),
+    description='Python sample application'
