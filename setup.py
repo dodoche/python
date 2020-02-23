@@ -60,12 +60,5 @@ setup(
               'kubernetes.utils', 'kubernetes.client.apis'],
     include_package_data=True,
     long_description="Python client for kubernetes http://kubernetes.io/",
-    classifiers=[
-        "Development Status :: %s" % DEVELOPMENT_STATUS,
-        "Topic :: Utilities",
-        "Intended Audience :: Developers",
-        "Intended Audience :: Information Technology",
-        "License :: OSI Approved :: Apache Software License",
-        "Operating System :: OS Independent"
-    ],
+    
 )
