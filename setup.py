@@ -42,9 +42,6 @@ with open('requirements.txt') as f:
         else:
             REQUIRES.append(line)
 
-with open('test-requirements.txt') as f:
-    TESTS_REQUIRES = f.readlines()
-
 setup(
     name=PACKAGE_NAME,
     version=CLIENT_VERSION,
