@@ -6,4 +6,4 @@ setup(
     author='doraly',
     url="https://github.com/dodoche/openshift-python.git",
     packages=find_packages('selector.py'),
-    description='Python sample application'
+    description='Python sample application')
